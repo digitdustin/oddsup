@@ -45,7 +45,7 @@ export const FlickerText = () => {
       ref={targetRef}
       className="text-white font-clash text-[68px] sm:text-8xl md:text-9xl font-[650] text-center"
     >
-      ODDS-<span className="blue-glow">UP</span>
+      ODDS<span className="blue-glow">UP</span>
     </h1>
   );
 };

@@ -27,7 +27,7 @@ export default function Home() {
         transition={{ duration: 0.5, delay: 2, ease: "easeOut" }}
         className="w-full pl-6 py-4 pr-4 flex items-center absolute top-0 justify-between"
       >
-        <p className="text-white text-base font-clash font-[650]">ODDS-UP</p>
+        <p className="text-white text-base font-clash font-[650]">ODDSUP</p>
         <div className="flex gap-x-2">
           <button
             onClick={() => setOpen(true)}
