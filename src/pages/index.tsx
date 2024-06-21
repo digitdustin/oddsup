@@ -31,9 +31,9 @@ export default function Home() {
         <div className="flex gap-x-2">
           <button
             onClick={() => setOpen(true)}
-            className="w-8 h-8 bg-[#101012] hover:bg-white/10 rounded-md flex items-center justify-center"
+            className="h-8 px-3 bg-[#101012] hover:bg-white/10 rounded-md flex items-center justify-center"
           >
-            <HelpCircle className="text-white/60 w-5 h-5" strokeWidth={1.5} />
+            <p className="text-white/60 text-sm">How it works</p>
           </button>
         </div>
       </m.header>

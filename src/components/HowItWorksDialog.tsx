@@ -58,7 +58,7 @@ const HowItWorksDialog = ({
             }}
           >
             <m.div
-              className="p-px w-[30rem] flex items-center justify-center relative max-w-[calc(100vw-16px)] rounded-md bg-gradient-to-r from-fuchsia-200/60 via-fuchsia-300 to-indigo-500 shadow-lg"
+              className="p-px w-[30rem] flex items-center justify-center relative max-w-[calc(100vw-16px)] rounded-md bg-gradient-to-r from-indigo-200/60 via-indigo-300 to-indigo-500 shadow-lg"
               layout
             >
               <div className="p-4 w-full rounded-[5px] bg-zinc-950">
