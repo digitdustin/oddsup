@@ -1,0 +1,449 @@
+body {
+  font-family: "Inter", sans-serif;
+
+  /* colors */
+  --form-button-primary-normal: #5f57ff;
+  --form-button-primary-pressed: #5f57ff;
+  --form-button-secondary-normal: #1d62ed;
+  --form-button-secondary-pressed: #1d62ed;
+  --form-button-success-normal: #00b341;
+  --form-button-success-pressed: #00b341;
+  --form-button-destructive-normal: #df1c41;
+  --form-button-destructive-pressed: #df1c41;
+  --form-button-orange-normal: #ff7e00;
+  --form-button-orange-pressed: #ff7e00;
+  --neutral-solid-700: #272835;
+  --text-muted-600: #36394a;
+  --background-white: #ffffff;
+  --text-white: #ffffff;
+
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  text-rendering: optimizeLegibility;
+  font-feature-settings: "cv11", "salt", "ss01", "ss03", "cv01", "cv02", "cv03",
+    "cv04", "cv05", "cv06", "cv09", "cv10";
+}
+
+.actionbutton {
+  font-family: inherit;
+  height: 32px;
+  border-radius: 6px;
+  cursor: pointer;
+  position: relative;
+
+  /* base version of the button, which is dark */
+  background: linear-gradient(
+      180deg,
+      rgba(255, 255, 255, 0.16) 0%,
+      rgba(255, 255, 255, 0) 100%
+    ),
+    var(--neutral-solid-700);
+  box-shadow: 0px 0px 0px 1px var(--neutral-solid-700),
+    0px 1px 2px 0px rgba(13, 13, 18, 0.4);
+
+  outline: 1px solid transparent;
+  outline-offset: 2px;
+
+  transition: 150ms all;
+}
+
+/* Stroke of the buttons */
+.actionbutton::before {
+  content: "";
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  border-radius: 6px;
+  background: var(
+    --form-button-stroke,
+    linear-gradient(
+      180deg,
+      rgba(255, 255, 255, 0.16) 16%,
+      rgba(255, 255, 255, 0) 100%
+    )
+  );
+  top: 0;
+  left: 0;
+}
+
+/* Base Background Filler */
+.actionbutton::after {
+  content: "";
+  width: calc(100% - 2px);
+  height: calc(100% - 2px);
+  position: absolute;
+  border-radius: 5px;
+  background: linear-gradient(
+      180deg,
+      rgba(255, 255, 255, 0.09) 0%,
+      rgba(255, 255, 255, 0) 100%
+    ),
+    var(--neutral-solid-700);
+  top: 1px;
+  left: 1px;
+}
+
+.actionbutton span {
+  z-index: 5;
+  font-size: 13px;
+  font-weight: 500;
+  text-align: center;
+  border-radius: 6px;
+  transition: 150ms all;
+}
+
+.actionbutton span:before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: linear-gradient(
+    180deg,
+    rgba(255, 255, 255, 1) 0%,
+    rgba(255, 255, 255, 0) 100%
+  );
+  opacity: 0;
+  border-radius: 6px;
+
+  transition: 150ms all;
+}
+
+.actionbutton:hover span:before {
+  opacity: 0.14;
+}
+
+.actionbutton:focus {
+  outline: 1px solid rgba(0, 0, 0, 0.5);
+  outline-offset: 2px;
+}
+
+/* Normal Active State */
+.actionbutton:active span:before {
+  background: linear-gradient(
+      180deg,
+      rgba(255, 255, 255, 0) 0%,
+      rgba(255, 255, 255, 0) 100%
+    ),
+    var(--neutral-solid-700);
+  opacity: 0.14;
+}
+
+/* This is to provide safe spacing for icons, I didn't want to mix span with span so used em, however if anyone has a better solution to achieve safe spacing without adding another element like em, feel free to suggest me */
+.actionbutton span em {
+  padding: 0 4px;
+  font-style: normal;
+}
+
+/* WHITE */
+/* White Base */
+.actionbutton.white {
+  background: var(--background-white);
+  box-shadow: 0px 0px 0px 1px rgba(18, 55, 105, 0.08),
+    0px 1px 2px 0px rgba(164, 172, 185, 0.24);
+}
+
+/* White Background Filler */
+.actionbutton.white:after {
+  background: transparent;
+}
+
+/* Make .actionbutton text color dark for white version */
+.actionbutton.white span {
+  color: var(--text-muted-600);
+}
+
+/* override normal color styling, white is different and do not need inner gradient */
+.actionbutton.white:active span:before {
+  opacity: 0;
+}
+
+.actionbutton.white:hover span:before {
+  background: transparent;
+}
+
+.actionbutton.white:hover {
+  background: linear-gradient(
+      180deg,
+      rgba(255, 255, 255, 0) 0%,
+      rgba(193, 199, 208, 0.08) 100%
+    ),
+    #fff;
+  box-shadow: 0px 0px 0px 1px rgba(18, 55, 105, 0.08),
+    0px 1px 2px 0px rgba(164, 172, 185, 0.24),
+    0px 3px 6px 0px rgba(164, 172, 185, 0.24);
+}
+
+.actionbutton.white:active {
+  background: linear-gradient(
+      180deg,
+      rgba(193, 199, 208, 0.08) 0%,
+      rgba(255, 255, 255, 0.08) 100%
+    ),
+    #fff;
+}
+
+/* OUTLINE */
+/* Outline Base */
+.actionbutton.outline {
+  background: transparent;
+  box-shadow: 0px 0px 0px 1px rgba(182, 190, 200, 0.241),
+    0px 1px 2px 0px transparent;
+}
+
+.actionbutton.outline::before {
+  background: transparent;
+}
+
+.actionbutton.outline span {
+  @apply dark:text-white text-[var(--text-muted-600)];
+}
+
+.actionbutton.outline span:before {
+  background: linear-gradient(
+    180deg,
+    rgba(255, 255, 255, 0.3) 0%,
+    rgba(255, 255, 255, 0) 100%
+  );
+}
+
+/* Outline Background Filler */
+.actionbutton.outline:after {
+  background: transparent;
+}
+
+/* Outline Active State */
+.actionbutton.outline:active span:before {
+  opacity: 0;
+}
+
+.actionbutton.outline:hover span:before {
+  background: transparent;
+}
+
+.actionbutton.outline:hover {
+  box-shadow: 0px 0px 0px 1px rgba(182, 190, 200, 0.241),
+    0px 1px 2px 0px rgba(0, 0, 0, 0.09), 0px 3px 6px 0px rgba(0, 0, 0, 0.1);
+}
+
+/* PURPLE */
+/* Purple Base */
+.actionbutton.purple {
+  background: linear-gradient(
+      180deg,
+      rgba(255, 255, 255, 0.12) 0%,
+      rgba(255, 255, 255, 0) 100%
+    ),
+    var(--form-button-primary-normal);
+  box-shadow: 0px 0px 0px 1px #4f47eb, 0px 1px 2px 0px rgba(26, 19, 161, 0.5);
+}
+
+/* Purple Background Filler */
+.actionbutton.purple:after {
+  background: linear-gradient(
+      180deg,
+      rgba(255, 255, 255, 0.12) 0%,
+      rgba(255, 255, 255, 0) 100%
+    ),
+    var(--form-button-primary-normal);
+}
+
+/* Purple Active State */
+.actionbutton.purple:active:after,
+button.purple:active {
+  background: linear-gradient(
+      180deg,
+      rgba(255, 255, 255, 0) 0%,
+      rgba(255, 255, 255, 0.16) 100%
+    ),
+    var(--form-button-primary-pressed);
+}
+.actionbutton.purple:active span:before {
+  background: linear-gradient(
+      180deg,
+      rgba(255, 255, 255, 0) 0%,
+      rgba(255, 255, 255, 0.16) 100%
+    ),
+    var(--form-button-primary-pressed);
+  opacity: 0.14;
+}
+
+/* RED */
+/* Red Base */
+.actionbutton.red {
+  background: linear-gradient(
+      180deg,
+      rgba(255, 255, 255, 0.12) 0%,
+      rgba(255, 255, 255, 0) 100%
+    ),
+    var(--form-button-destructive-normal);
+  box-shadow: 0px 0px 0px 1px #b71836, 0px 1px 2px 0px rgba(113, 14, 33, 0.5);
+}
+
+/* Red Background Filler */
+.actionbutton.red:after {
+  background: linear-gradient(
+      180deg,
+      rgba(255, 255, 255, 0.12) 0%,
+      rgba(255, 255, 255, 0) 100%
+    ),
+    var(--form-button-destructive-normal);
+}
+
+/* Red Active State */
+.actionbutton.red:active span:before {
+  background: linear-gradient(
+      180deg,
+      rgba(255, 255, 255, 0) 0%,
+      rgba(255, 255, 255, 0.16) 100%
+    ),
+    var(--form-button-destructive-pressed);
+  opacity: 0.14;
+}
+.actionbutton.red:active:after,
+.actionbutton.red:active {
+  background: linear-gradient(
+      180deg,
+      rgba(255, 255, 255, 0) 0%,
+      rgba(255, 255, 255, 0.16) 100%
+    ),
+    var(--form-button-destructive-pressed);
+}
+
+/* GREEN */
+/* Green Base */
+.actionbutton.green {
+  background: linear-gradient(
+      180deg,
+      rgba(255, 255, 255, 0.12) 0%,
+      rgba(255, 255, 255, 0) 100%
+    ),
+    var(--form-button-success-normal);
+  box-shadow: 0px 0px 0px 1px #35aa18, 0px 1px 2px 0px rgba(13, 55, 33, 0.5);
+}
+
+/* Green Background Filler */
+.actionbutton.green:after {
+  background: linear-gradient(
+      180deg,
+      rgba(255, 255, 255, 0.12) 0%,
+      rgba(255, 255, 255, 0) 100%
+    ),
+    var(--form-button-success-normal);
+}
+
+/* Green Active State */
+.actionbutton.green:active span:before {
+  background: linear-gradient(
+      180deg,
+      rgba(255, 255, 255, 0) 0%,
+      rgba(255, 255, 255, 0.16) 100%
+    ),
+    var(--form-button-success-pressed);
+  opacity: 0.14;
+}
+
+.actionbutton.green:active:after,
+.actionbutton.green:active {
+  background: linear-gradient(
+      180deg,
+      rgba(255, 255, 255, 0) 0%,
+      rgba(255, 255, 255, 0.16) 100%
+    ),
+    var(--form-button-success-pressed);
+}
+
+/* BLUE */
+/* Blue Base */
+.actionbutton.blue {
+  background: linear-gradient(
+      180deg,
+      rgba(255, 255, 255, 0.12) 0%,
+      rgba(255, 255, 255, 0) 100%
+    ),
+    var(--form-button-secondary-normal);
+  box-shadow: 0px 0px 0px 1px #1450c7, 0px 1px 2px 0px rgba(13, 55, 33, 0.5);
+}
+
+/* Blue Background Filler */
+.actionbutton.blue:after {
+  background: linear-gradient(
+      180deg,
+      rgba(255, 255, 255, 0.12) 0%,
+      rgba(255, 255, 255, 0) 100%
+    ),
+    var(--form-button-secondary-normal);
+}
+
+/* Blue Active State */
+.actionbutton.blue:active span:before {
+  background: linear-gradient(
+      180deg,
+      rgba(255, 255, 255, 0) 0%,
+      rgba(255, 255, 255, 0.16) 100%
+    ),
+    var(--form-button-secondary-pressed);
+  opacity: 0.14;
+}
+
+.actionbutton.blue:active:after,
+.actionbutton.blue:active {
+  background: linear-gradient(
+      180deg,
+      rgba(255, 255, 255, 0) 0%,
+      rgba(255, 255, 255, 0.16) 100%
+    ),
+    var(--form-button-secondary-pressed);
+}
+
+/* ORANGE */
+/* Orange Base */
+
+.actionbutton.orange {
+  background: linear-gradient(
+      180deg,
+      rgba(255, 255, 255, 0.12) 0%,
+      rgba(255, 255, 255, 0) 100%
+    ),
+    var(--form-button-orange-normal);
+  box-shadow: 0px 0px 0px 1px #d66e00, 0px 1px 2px 0px rgba(113, 14, 33, 0.5);
+}
+
+/* Orange Background Filler */
+.actionbutton.orange:after {
+  background: linear-gradient(
+      180deg,
+      rgba(255, 255, 255, 0.12) 0%,
+      rgba(255, 255, 255, 0) 100%
+    ),
+    var(--form-button-orange-normal);
+}
+
+/* Orange Active State */
+
+.actionbutton.orange:active span:before {
+  background: linear-gradient(
+      180deg,
+      rgba(255, 255, 255, 0) 0%,
+      rgba(255, 255, 255, 0.16) 100%
+    ),
+    var(--form-button-orange-pressed);
+  opacity: 0.14;
+}
+
+.actionbutton.orange:active:after,
+.actionbutton.orange:active {
+  background: linear-gradient(
+      180deg,
+      rgba(255, 255, 255, 0) 0%,
+      rgba(255, 255, 255, 0.16) 100%
+    ),
+    var(--form-button-orange-pressed);
+}
+
+/* DISABLED */
+.actionbutton:disabled {
+  cursor: not-allowed;
+  opacity: 0.5;
+}
