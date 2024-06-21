@@ -24,7 +24,7 @@ export default function Home() {
       <m.header
         initial={{ opacity: 0, y: -20, scaleY: 0.9 }}
         animate={{ opacity: 1, y: 0, scaleY: 1 }}
-        transition={{ duration: 0.5, delay: 2.2, ease: "easeOut" }}
+        transition={{ duration: 0.5, delay: 2, ease: "easeOut" }}
         className="w-full pl-6 py-4 pr-4 flex items-center absolute top-0 justify-between"
       >
         <p className="text-white text-base font-clash font-[650]">ODDS-UP</p>

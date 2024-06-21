@@ -71,8 +71,8 @@ const HowItWorksDialog = ({
                 </p>
                 <p className="text-white/60 text-sm mt-4">
                   For a small $5 monthly subscription ($1.25 weekly), you’re
-                  entering yourself into winning $20,000 cash prizes where 3
-                  lucky individuals win weekly.
+                  entering yourself into winning up to $20,000 and other cash
+                  prizes, where 3 lucky individuals win weekly.
                 </p>
                 <p className="text-white/60 text-sm mt-4">
                   1 in 350 million vs. 3 in 100,000.
