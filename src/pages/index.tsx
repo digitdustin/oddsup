@@ -69,7 +69,7 @@ export default function Home() {
             className="focus:outline-none"
           >
             <ActionButton
-              color="purple"
+              color="gray"
               className="mt-4 !h-10 px-3 z-10 focus:!ring-violet-500/20 focus:!ring-4 focus:!outline-none"
               spanClassName="!text-base"
             >
