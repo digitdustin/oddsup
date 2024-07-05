@@ -40,6 +40,18 @@ export const FlickerText = () => {
     target.onclick = () => neonGlory(target);
   }, []);
 
+  // flicker every 10 seconds
+  useEffect(() => {
+    const interval = setInterval(() => {
+      const target = targetRef.current;
+      if (target) {
+        target.click();
+      }
+    }, 10000);
+
+    return () => clearInterval(interval);
+  }, []);
+
   return (
     <h1
       ref={targetRef}

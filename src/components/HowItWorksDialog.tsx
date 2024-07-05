@@ -88,7 +88,7 @@ const HowItWorksDialog = ({
                   }}
                   className="text-white text-sm mt-4 pt-4 underline"
                 >
-                  Join the Discord
+                  Secure Your Spot
                 </a>
               </div>
             </m.div>

@@ -76,7 +76,7 @@ export default function Home() {
               <div className="w-6 h-6">
                 <DiscordLogo />
               </div>
-              <p>Join the Discord</p>
+              <p>Secure Your Spot</p>
             </ActionButton>
           </a>
           <span className="glowing-background duration-300 opacity-100"></span>
