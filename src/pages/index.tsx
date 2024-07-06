@@ -73,13 +73,12 @@ export default function Home() {
               className="mt-4 !h-10 px-3 z-10 focus:!ring-violet-500/20 focus:!ring-4 focus:!outline-none"
               spanClassName="!text-base"
             >
-              <div className="w-6 h-6">
+              {/* <div className="w-6 h-6">
                 <DiscordLogo />
-              </div>
+              </div> */}
               <p>Secure Your Spot</p>
             </ActionButton>
           </a>
-          <span className="glowing-background duration-300 opacity-100"></span>
         </m.div>
         {/* <p className="text-white/60 text-center text-sm mt-4">
           Free entry for the next{" "}
