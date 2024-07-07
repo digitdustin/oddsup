@@ -81,7 +81,7 @@ const HowItWorksDialog = ({
                   You do the math. See you on the winning side.
                 </p>
                 <a
-                  href="discord.gg/Ptsc6RbZ"
+                  href="https://discord.gg/syPaZBM6pV"
                   onClick={(e) => {
                     e.preventDefault();
                     setOpen(false);

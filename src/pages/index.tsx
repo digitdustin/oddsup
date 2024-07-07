@@ -63,7 +63,7 @@ export default function Home() {
           className="relative w-fit mx-auto"
         >
           <a
-            href="https://discord.gg/Ptsc6RbZ"
+            href="https://https://discord.gg/syPaZBM6pV"
             target="_blank"
             rel="noreferrer"
             className="focus:outline-none"
